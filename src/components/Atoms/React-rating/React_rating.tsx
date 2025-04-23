@@ -1,0 +1,22 @@
+import React, { useState } from 'react'
+import Rating from 'react-rating'
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
+import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
+import { BiSolidCheckbox } from "react-icons/bi";
+
+
+export default function React_rating() {
+  const [rating, setRating] = useState(0)
+
+  return (
+    <div >
+      <Rating
+        initialRating={rating}
+        onChange={(rate) => setRating(rate)}
+        emptySymbol={<MdOutlineCheckBoxOutlineBlank size={20} color="#ccc" />}
+        fullSymbol={<BiSolidCheckbox size={20} color="#1eb9c8" />}
+        stop={10}
+      />
+    </div>
+  )
+}

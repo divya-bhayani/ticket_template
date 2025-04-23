@@ -1,0 +1,378 @@
+.main_navbar {
+    background: #9e80f6;
+  }
+  
+  .navbar_box_inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .search_display_inner {
+    display: flex;
+    justify-content: left;
+    /* padding: 0px 5px; */
+    color: white;
+  }
+  
+  .search_icon i {/* padding: 0px 36px; */}
+  
+  .search_text {
+    padding: 0px 9px;
+  }
+  
+  .search_display_inner {
+    background: rgba(0, 0, 0, 0.08);
+    padding: 10px;
+  }
+  
+  .search_display:hover {
+    color: #FFF;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+  }
+  .mode_play_inner {
+    display: flex;
+    gap: 10px;
+}
+
+.help_inner {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.mode_play_box {
+    color: white;
+}
+
+.help_icon {
+}
+
+.playground_inner {
+    background: rgba(0, 0, 0, 0.08);
+    padding: 10px;
+}
+
+.help_inner {
+    background: rgba(0, 0, 0, 0.08);
+    padding: 10px;
+}
+.navbar_box_inner span {
+    font-size: 13px;
+    font-weight: 900;
+}.top_section {
+    background: #9e80f6;
+    padding-bottom: 40px;
+}
+
+.bottom_section {
+    position: absolute;
+    top: 80px;
+}
+
+ul.navbar_ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+ul.navbar_ul li {}
+
+ul.navbar_ul {
+    list-style: none;
+}
+
+.navbar_section {
+    color: white;
+}
+
+.navbar_menu_inner {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.navbar_title span {
+    font-size: 15px;
+}
+.bottom_section {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.08);
+    height: 46px;
+}
+.navbar_icon {
+    padding: 5px 0px;
+}
+.navbar_icon {
+    padding: 5px 0px;
+}
+.navbar_icon {
+    padding: 5px 0px;
+}
+
+.navbar_menu:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px ;
+}
+.navbar_menu {
+    padding: 5px 15px;
+}
+.navbar_menu_active{
+    margin-bottom: 0;
+    height: 29px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background:white;
+    color: black;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+.navbar_menu_active:hover{
+    background:white;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+
+
+
+/* ticket  */
+.ticket_flow_top_section_inner {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.top_section_box_inner {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    padding: 20px;
+}
+
+.ticket_flow_top_section {
+    color: #62647b;
+}
+
+.top_title li {
+    list-style: none;
+}
+.ticket_flow_top_section_inner {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.top_section_box_inner {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+
+
+.top_title li {
+    list-style: none;
+}
+
+.top_section_box {
+    padding: 10px 0px;
+}
+
+.top_section_box_inner {
+    background: #eee;
+    border-radius: 5px;
+}
+.ticket_box {
+    width: 300px;
+}
+
+.ticket_top {
+  
+    background: #eee;
+    height: 32px;
+}
+
+.ticket_top_inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ 
+}
+.ticket_top {/* padding: 14px 0px; */padding-top: 10px;}
+
+
+.ticket_flow_bottom_section {
+    margin: 20px 0px;
+}
+
+.ticket_box_inner {
+    
+    padding: 20px;
+}
+.ticket_add_inner span {
+    position: relative;
+    top: 20%;
+    left: 50%;
+    font-size: 20px;
+    font-weight: 900;
+}
+.ticket_add {
+  
+    padding-top: 5px;
+}
+.ticket_add_inner {
+    background: #eee;
+    height: 32px;
+}
+.ticket_total {
+    background: white;
+    width: 30px;
+    border-radius: 5px;
+    height: 20px;
+}
+
+.ticket_total {
+}
+
+.ticket_total span {
+    padding-left: 10px;
+}
+
+.ticket_name {
+    font-weight: 900;
+}
+.ticket_add_inner:hover {
+    background: #dadada;
+}
+
+
+
+
+/*Model */
+.react-responsive-modal-modal {
+    width: 100% !important;
+    height: 100% !important;
+}
+.model_first_section_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first_left_inner {
+    display: flex;
+    gap: 5px;
+}
+
+.first_right_inner {
+    display: flex;
+    gap: 10px;
+    padding-right: 30px;
+}
+.model_second_section {
+    width: 100%;
+    /* height: 35px; */
+    padding: 30px 0px;
+}
+
+.model_second_section_inner span {
+    font-size: 25px;
+}
+.model_third_section_inner {
+    display: flex;
+    justify-content: space-around;
+}
+
+.model_third_inner span {
+    font-size: 20px;
+    color: #62647b;
+}
+.model_attribute_add {
+    padding: 20px;
+}
+
+.model_attribute_add_inner button {
+    width: 100%;
+    height: 35px;
+    color: #62647b;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+.model_attributes {
+    margin: 0px -10px;
+}
+
+.model_desc {
+    padding: 10px 25px;
+}
+.model_description input {
+    width: 506px;
+    background: #fafbfc;
+    border: #eee;
+    border-width: 1px;
+    border: 1px solid #610202;
+    height: 34px;
+    
+    border-radius: 6px;
+    padding: 0px !important
+}
+.field_inner {
+    gap: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.field_inner span {
+    font-size: 18px;
+}
+
+.field_inner svg {
+    /* size: 20px; */
+    font-size: 25px;
+}
+.model_desc_inner {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0px 30px; */
+}
+.model_description {
+    width: 550px;
+}
+.css-hlgwow{
+    padding: 0px 4px !important;
+}
+.css-1my1ww6-control{
+    height: 5px !important;
+}
+.model_description:hover {
+    background: #eee;
+}
+.react-datepicker-wrapper {
+    width: 550px;
+    border: 1px solid #eee !important;
+}
+
+.react-datepicker__input-container input:hover {
+    background: #eee;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+input.disabled {
+    background: #eee;
+    border: none;
+    outline: none;
+}
+.model_description input {
+    border: 1px solid #eee;
+}
+.model_description input {
+    padding: 0px 20px !important;
+}
+.model_third_inner {
+    border-bottom: 3px solid #a3deff;
+    padding: 5px 0px;
+}
