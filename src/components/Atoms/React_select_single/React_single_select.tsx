@@ -8,6 +8,11 @@ type OptionType = {
   label: string;
 };
 
+interface react_select_props{
+  informations:any,
+  setInformation:any
+}
+
 const animatedComponents = makeAnimated();
 
 const customStyles: StylesConfig<OptionType, false> = {
@@ -36,12 +41,13 @@ const customStyles: StylesConfig<OptionType, false> = {
   }),
 };
 
-const ReactSelectSingleChip: React.FC = () => {
+const ReactSelectSingleChip = ({informations,setInformation}:react_select_props) => {
   const [options, setOptions] = useState<OptionType[]>([
     { value: 'Bug', label: 'Bug' },
     { value: 'Suggestion', label: 'Suggestion' },
     { value: 'Refund', label: 'Refund' },
     { value: 'Activation', label: 'Activation' },
+    
     { value: 'Referral', label: 'Referral' },
   ]);
 
@@ -55,6 +61,7 @@ const ReactSelectSingleChip: React.FC = () => {
 
   const handleChange = (selected: OptionType | null) => {
     setSelectedOption(selected);
+    setInformation({...informations,ticket_type:selected})
   };
 
   return (

@@ -1,12 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Rating from 'react-rating'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { BiSolidCheckbox } from "react-icons/bi";
 
+interface react_ratingprops{
+  informations:any,
+  setInformation:any,
+}
 
-export default function React_rating() {
+export default function React_rating({informations,setInformation}:react_ratingprops) {
   const [rating, setRating] = useState(0)
+  useEffect(()=>{
+    setInformation({...informations,importance:rating})
+  },[rating])
+  
+  
 
   return (
     <div >

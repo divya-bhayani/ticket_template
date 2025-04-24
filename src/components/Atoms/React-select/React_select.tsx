@@ -38,8 +38,10 @@ const  React_select=({ informations, setInformation }:react_selectprops) =>{
   
   const changeselected=(selected:any)=>{
     setSelectedOptions(selected as OptionType[])
-    setInformation({...informations,support_status:options})
+    setInformation({...informations,support_status:selected})
   }
+
+  
   const customStyles: StylesConfig<OptionType, true> = {
     control: (provided, state) => ({
       ...provided,

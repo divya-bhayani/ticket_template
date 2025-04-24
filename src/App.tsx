@@ -1,7 +1,7 @@
 
 import './App.css'
-import React_rating from './components/Atoms/React-rating/React_rating'
-import AnimatedMulti from './components/Atoms/React-select/React_select'
+import Testing from './components/Atoms/Testing'
+
 import Navbar from './components/Organisms/Navbar'
 import Ticket_flow from './components/Organisms/Ticket_flow'
 
@@ -12,6 +12,7 @@ function App() {
     <>
      <Navbar/>
      <Ticket_flow/>
+     {/* <Testing/> */}
   
    
     </>

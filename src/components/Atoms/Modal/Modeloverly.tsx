@@ -23,30 +23,27 @@ import React_single_select from '../React_select_single/React_single_select';
 interface ModalProps {
   open: boolean;
   onClose: () => void;
-}
-interface information{
-    title:string,
-    support_status:string|[],
+  information:any,
+  setInformation:any
+  
 }
 
-const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
+const Modeloverly: React.FC<ModalProps> = ({ open, onClose ,information,setInformation}) => {
     const[tab,setTab]=useState(0)
     
-    const [information,setInformation]=useState<information>({
-        title:'',
-        support_status:[],
-    })
+   
     const[text,setText]=useState('')
 
     const handletitle=(e:any)=>{
+       
         if (e.key === "Enter") {
             e.preventDefault();
-            setInformation({...information,title:text})
+            setInformation({...information,...information.title,title:text})
             return;
           }
        
     }
-    console.log("title--------------------------",information.title);
+   
     
   return (
     <Modal open={open} onClose={onClose}>
@@ -141,7 +138,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                               <React_quill/>
+                               <React_quill  informations={information} setInformation={setInformation}/>
                             </div>
                            
                         </div>
@@ -155,7 +152,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                             <React_rating/>
+                             <React_rating  informations={information} setInformation={setInformation}/>
                             </div>
                            
                         </div>
@@ -169,7 +166,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                            <React_date/>
+                            <React_date informations={information} setInformation={setInformation}/>
                             </div>
                            
                         </div>
@@ -197,7 +194,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                            <input type='text' placeholder='Add' disabled className='disabled'/>
+                            <input type='text' placeholder='Add'  className='disabled' onChange={(e)=>setInformation({...information,Additional_Link:e.target.value})}/>
                             </div>
                            
                         </div>
@@ -211,7 +208,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                                <React_single_select />
+                                <React_single_select informations={information} setInformation={setInformation}/>
                             </div>
                            
                         </div>

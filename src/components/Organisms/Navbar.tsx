@@ -11,7 +11,7 @@ import { IoBugSharp } from "react-icons/io5";
 
 export default function Navbar() {
     const [actives,setActive]=useState("ticket flow")
-    console.log("active==================",actives);
+   
     
     return (
         <div className="main_navbar">
