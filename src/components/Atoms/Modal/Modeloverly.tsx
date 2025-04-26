@@ -32,22 +32,36 @@ interface ModalProps {
 const Modeloverly: React.FC<ModalProps> = ({ open, onClose ,information,setInformation}) => {
     const[tab,setTab]=useState(0)
     
+<<<<<<< HEAD
      const [formdata,setFormdata]=useState(information)
      useEffect(()=>{
         setFormdata(information)
      },[information])
 
     // console.log("information",information);
+=======
+   
+    const[text,setText]=useState('')
+>>>>>>> cc4165bcd30979060b5fc107bdf7c9dd920174eb
 
     const handletitle=(e:any)=>{
        
         if (e.key === "Enter") {
             e.preventDefault();
+<<<<<<< HEAD
             setInformation(formdata);
+=======
+            setInformation({...information,...information.title,title:text})
+>>>>>>> cc4165bcd30979060b5fc107bdf7c9dd920174eb
             return;
           }
        
     }
+<<<<<<< HEAD
+=======
+   
+    
+>>>>>>> cc4165bcd30979060b5fc107bdf7c9dd920174eb
   return (
     <Modal open={open} onClose={onClose}>
      <div className='model'>
@@ -197,10 +211,14 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose ,information,setInfor
                                 </div>
                             </div>
                             <div className='model_description'>
+<<<<<<< HEAD
                             <input type='text' placeholder='Add' value={formdata.Addition_Link} onChange={(e)=>{
                                 setFormdata({...formdata,Addition_Link:e.target.value})
                                 setInformation(formdata)
                                 }} className='disabled'/>
+=======
+                            <input type='text' placeholder='Add'  className='disabled' onChange={(e)=>setInformation({...information,Additional_Link:e.target.value})}/>
+>>>>>>> cc4165bcd30979060b5fc107bdf7c9dd920174eb
                             </div>
                            
                         </div>

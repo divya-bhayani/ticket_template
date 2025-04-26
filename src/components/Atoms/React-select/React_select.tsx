@@ -41,10 +41,15 @@ const  React_select=({ informations, setInformation }:react_selectprops) =>{
   };
   
   const changeselected=(selected:any)=>{
+<<<<<<< HEAD
     setSelectedOptions(selected);
     const updatedForm = { ...formdata, support_status: selected };
     setFormdata(updatedForm);
     setInformation(updatedForm);
+=======
+    setSelectedOptions(selected as OptionType[])
+    setInformation({...informations,support_status:selected})
+>>>>>>> cc4165bcd30979060b5fc107bdf7c9dd920174eb
   }
 
   

@@ -43,12 +43,15 @@ const customStyles: StylesConfig<OptionType, false> = {
 };
 
 const ReactSelectSingleChip = ({informations,setInformation}:react_select_props) => {
+<<<<<<< HEAD
    const [formdata, setFormdata] = useState(informations);
   
     useEffect(() => {
       setFormdata(informations);
     }, [informations]);
 
+=======
+>>>>>>> cc4165bcd30979060b5fc107bdf7c9dd920174eb
   const [options, setOptions] = useState<OptionType[]>([
     { value: 'Bug', label: 'Bug' },
     { value: 'Suggestion', label: 'Suggestion' },
@@ -68,9 +71,13 @@ const ReactSelectSingleChip = ({informations,setInformation}:react_select_props)
 
  const handleChange = (selected: OptionType | null) => {
     setSelectedOption(selected);
+<<<<<<< HEAD
     const updatedForm = { ...formdata, ticket_type: selected };
     setFormdata(updatedForm);
     setInformation(updatedForm);
+=======
+    setInformation({...informations,ticket_type:selected})
+>>>>>>> cc4165bcd30979060b5fc107bdf7c9dd920174eb
   };
 
   return (

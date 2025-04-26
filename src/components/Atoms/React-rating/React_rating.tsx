@@ -10,6 +10,7 @@ interface react_ratingprops{
 }
 
 export default function React_rating({informations,setInformation}:react_ratingprops) {
+<<<<<<< HEAD
  
   
   const [formdata, setFormdata] = useState(informations);
@@ -23,6 +24,13 @@ export default function React_rating({informations,setInformation}:react_ratingp
       setFormdata(updatedForm);
       setInformation(updatedForm);
     };
+=======
+  const [rating, setRating] = useState(0)
+  useEffect(()=>{
+    setInformation({...informations,importance:rating})
+  },[rating])
+  
+>>>>>>> cc4165bcd30979060b5fc107bdf7c9dd920174eb
   
 
   return (
