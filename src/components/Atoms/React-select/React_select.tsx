@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CreatableSelect from 'react-select/creatable';
 import makeAnimated from 'react-select/animated';
 import { StylesConfig } from 'react-select';
@@ -18,7 +18,11 @@ interface react_selectprops{
 const  React_select=({ informations, setInformation }:react_selectprops) =>{
 
   // console.log("information setInformation====================",informations.title);
-  
+  const[formdata,setFormdata]=useState(informations)
+  useEffect(()=>{
+    setFormdata(informations)
+  },[informations])
+
   const [options, setOptions] = useState<OptionType[]>([
     { value: 'Ticket Opened', label: 'Ticket Opened' },
     { value: 'Urgent', label: 'Urgent' },
@@ -27,19 +31,23 @@ const  React_select=({ informations, setInformation }:react_selectprops) =>{
     { value: 'To Resolved', label: 'To Resolved' }
   ]);
 
-  const [selectedOptions, setSelectedOptions] = useState<OptionType[]>([]);
+  const [selectedOptions, setSelectedOptions] = useState<any>([]);
 
   const handleCreate = (inputValue: string) => {
     const newOption: OptionType = { value: inputValue, label: inputValue };
     setOptions((options) => [...options, newOption]);
-    setSelectedOptions((options) => [...options, newOption]);
+    setSelectedOptions((options:any) => [...options, newOption]);
    
   };
   
   const changeselected=(selected:any)=>{
-    setSelectedOptions(selected as OptionType[])
-    setInformation({...informations,support_status:options})
+    setSelectedOptions(selected);
+    const updatedForm = { ...formdata, support_status: selected };
+    setFormdata(updatedForm);
+    setInformation(updatedForm);
   }
+
+  
   const customStyles: StylesConfig<OptionType, true> = {
     control: (provided, state) => ({
       ...provided,
@@ -92,7 +100,7 @@ const  React_select=({ informations, setInformation }:react_selectprops) =>{
       options={options}
       styles={customStyles}
       placeholder="Search and select labels..."
-      value={selectedOptions}
+      value={formdata.support_status}
       onChange={changeselected}
       onCreateOption={handleCreate}
     />

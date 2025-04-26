@@ -186,6 +186,8 @@ ul.navbar_ul {
 }
 .ticket_box {
     width: 300px;
+    min-width: 300px;
+    height: 500px;
 }
 
 .ticket_top {
@@ -241,7 +243,8 @@ ul.navbar_ul {
 }
 
 .ticket_name {
-    font-weight: 900;
+    font-weight: 600;
+    overflow: hidden;
 }
 .ticket_add_inner:hover {
     background: #dadada;
@@ -376,3 +379,80 @@ input.disabled {
     border-bottom: 3px solid #a3deff;
     padding: 5px 0px;
 }
+span.header_title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 25px;
+    color: hsl(0, 0%, 20%);
+    font-size: 85%;
+    padding: 3px;
+    padding-left: 6px;
+    box-sizing: border-box;
+    background: #e0a994;
+}
+
+
+.ticket_desc {
+    padding: 10px 10px;
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1); */
+    /* border: 1px solid gray; */
+    margin: 0px -10px;
+}
+
+.ticket_desc_inner {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    /* border: 1px solid gray; */
+    padding: 10px;
+}
+
+/* .ticket_box {
+    height: 300px;
+    overflow-x: hidden;
+} */
+ .ticket_scroll_container {
+     max-height: 400px;
+ 
+     overflow-y: auto;
+     overflow-x: hidden;
+   
+ }
+ .ticket-desc-info p {
+     margin: 0;
+    
+     padding: 5px 0;
+   
+     line-height: 1.5;
+  
+ }
+
+
+ .ticket-desc-info br {
+     margin-bottom: 10px;
+    
+ }
+
+
+ .ticket_flow_bottom_section_inner {
+     display: flex;
+     justify-content: left;
+     flex-wrap: nowrap;
+ }
+
+ .add_btn_inner button {
+     color: #62647b;
+     font-size: 15px;
+     border: none;
+     width: 165px;
+     height: 39px;
+     background: #eee;
+     margin: 20px 0px;
+ }
+ .ticket_flow_bottom_section_inner {
+     overflow-x: auto;
+    overflow-y: hidden;
+ }
+
+ .ticket_flow_bottom_section {
+     overflow: auto;
+ }

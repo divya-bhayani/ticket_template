@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
 import { BsArrowsFullscreen } from "react-icons/bs";
@@ -20,34 +20,34 @@ import React_quill from '../React-quill/React_quill';
 import React_rating from '../React-rating/React_rating';
 import React_date from '../React_datepicker/React_date';
 import React_single_select from '../React_select_single/React_single_select';
+
 interface ModalProps {
   open: boolean;
   onClose: () => void;
-}
-interface information{
-    title:string,
-    support_status:string|[],
+  information:any,
+  setInformation:any
+  
 }
 
-const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
+const Modeloverly: React.FC<ModalProps> = ({ open, onClose ,information,setInformation}) => {
     const[tab,setTab]=useState(0)
     
-    const [information,setInformation]=useState<information>({
-        title:'',
-        support_status:[],
-    })
-    const[text,setText]=useState('')
+     const [formdata,setFormdata]=useState(information)
+     useEffect(()=>{
+        setFormdata(information)
+     },[information])
+
+    // console.log("information",information);
 
     const handletitle=(e:any)=>{
+       
         if (e.key === "Enter") {
             e.preventDefault();
-            setInformation({...information,title:text})
+            setInformation(formdata);
             return;
           }
        
     }
-    console.log("title--------------------------",information.title);
-    
   return (
     <Modal open={open} onClose={onClose}>
      <div className='model'>
@@ -73,7 +73,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
             </div>
             <div className='model_second_section'>
                 <div className='model_second_section_inner'>
-                    <span>{information.title}</span>
+                    {/* <span>{information.title}</span> */}
                 </div>
             </div>
             <div className='model_third_section'>
@@ -113,7 +113,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                                <input type='text' value={text} onChange={(e)=>setText(e.target.value)} onKeyDown={handletitle} placeholder='Enter' />
+                                <input type='text' value={formdata.title} onChange={(e)=>setFormdata({...formdata,title:e.target.value})} onKeyDown={handletitle} placeholder='Enter' />
                             </div>
                            
                         </div>
@@ -141,7 +141,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                               <React_quill/>
+                               <React_quill  informations={information} setInformation={setInformation}/>
                             </div>
                            
                         </div>
@@ -155,7 +155,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                             <React_rating/>
+                             <React_rating  informations={information} setInformation={setInformation}/>
                             </div>
                            
                         </div>
@@ -169,7 +169,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                            <React_date/>
+                            <React_date informations={information} setInformation={setInformation}/>
                             </div>
                            
                         </div>
@@ -197,7 +197,10 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                            <input type='text' placeholder='Add' disabled className='disabled'/>
+                            <input type='text' placeholder='Add' value={formdata.Addition_Link} onChange={(e)=>{
+                                setFormdata({...formdata,Addition_Link:e.target.value})
+                                setInformation(formdata)
+                                }} className='disabled'/>
                             </div>
                            
                         </div>
@@ -211,7 +214,7 @@ const Modeloverly: React.FC<ModalProps> = ({ open, onClose }) => {
                                 </div>
                             </div>
                             <div className='model_description'>
-                                <React_single_select />
+                                <React_single_select informations={information} setInformation={setInformation}/>
                             </div>
                            
                         </div>

@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CreatableSelect from 'react-select/creatable';
 import makeAnimated from 'react-select/animated';
 import { StylesConfig } from 'react-select';
+
 
 type OptionType = {
   value: string;
   label: string;
 };
+
+interface react_select_props{
+  informations:any,
+  setInformation:any
+}
 
 const animatedComponents = makeAnimated();
 
@@ -36,32 +42,42 @@ const customStyles: StylesConfig<OptionType, false> = {
   }),
 };
 
-const ReactSelectSingleChip: React.FC = () => {
+const ReactSelectSingleChip = ({informations,setInformation}:react_select_props) => {
+   const [formdata, setFormdata] = useState(informations);
+  
+    useEffect(() => {
+      setFormdata(informations);
+    }, [informations]);
+
   const [options, setOptions] = useState<OptionType[]>([
     { value: 'Bug', label: 'Bug' },
     { value: 'Suggestion', label: 'Suggestion' },
     { value: 'Refund', label: 'Refund' },
     { value: 'Activation', label: 'Activation' },
+    
     { value: 'Referral', label: 'Referral' },
   ]);
 
-  const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
+  const [selectedOption, setSelectedOption] = useState<any>(null);
 
   const handleCreate = (inputValue: string) => {
     const newOption = { value: inputValue, label: inputValue };
     setOptions((prevOptions) => [...prevOptions, newOption]);
-    setSelectedOption(newOption); // Sets the newly created option as selected
+    setSelectedOption(newOption);
   };
 
-  const handleChange = (selected: OptionType | null) => {
+ const handleChange = (selected: OptionType | null) => {
     setSelectedOption(selected);
+    const updatedForm = { ...formdata, ticket_type: selected };
+    setFormdata(updatedForm);
+    setInformation(updatedForm);
   };
 
   return (
     <CreatableSelect
       options={options}
       components={animatedComponents}
-      value={selectedOption}
+      value={formdata.ticket_type}
       onChange={handleChange}
       styles={customStyles}
       onCreateOption={handleCreate}
